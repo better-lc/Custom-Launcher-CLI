@@ -1,6 +1,7 @@
 #Modules
 import parse
 
+
 #Initialization
 Exit=False
 print("")
@@ -29,5 +30,3 @@ while Exit==False:
         print("-----------------------------")
     else:
         parse.input(command)
-        if parse.Finish==True:
-            Exit=True
