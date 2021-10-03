@@ -16,6 +16,7 @@ else:
 #Initialization
 Exit=False
 print("")
+print("")
 print(" ░█████╗░██╗░░░░░")
 print(" ██╔══██╗██║░░░░░")
 print(" ██║░░╚═╝██║░░░░░")
