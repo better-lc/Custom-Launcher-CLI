@@ -1,9 +1,8 @@
 #Modules
 import parse
 
-
 #Initialization
-exit=0
+Exit=False
 print("")
 print(" ░█████╗░██╗░░░░░")
 print(" ██╔══██╗██║░░░░░")
@@ -14,7 +13,7 @@ print(" ░╚════╝░╚══════╝")
 print("")
 print(" Custom Launcher Python Rewrite by Aetopia.")
 #Main
-while exit==0:
+while Exit==False:
     print("")
     command=input("Command > ")
     if command=="help":
@@ -28,6 +27,7 @@ while exit==0:
         print("translate/t <language from> <language to> <text>")
         print("chocopackage/cp <package name>")
         print("-----------------------------")
-    else:    
+    else:
         parse.input(command)
-        exit=1
+        if parse.Finish==True:
+            Exit=True
