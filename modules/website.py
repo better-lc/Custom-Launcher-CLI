@@ -1,5 +1,4 @@
 import webbrowser
-import platform
 
 def search(engine, query):
     if engine.lower()=="google" or engine.lower()=="g":
@@ -30,8 +29,5 @@ def translate(langfrom,langto,text):
     webbrowser.open('https://translate.google.com/?sl='+langfrom+'from&tl='+langto+'&text='+text)
                     
 def chocopackagelookup(package):
-    if platform.system() == 'Windows':
         package=package.replace(" ","+")
         webbrowser.open('https://community.chocolatey.org/packages?q='+package)
-    else:
-        print("This command is only supported on Windows!")
