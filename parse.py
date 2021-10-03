@@ -1,6 +1,7 @@
 import sys
 sys.path.insert(1, 'modules')
 import website
+import platform
 Finish=False
 def input(command):
 #Input Parsing
@@ -21,12 +22,12 @@ def input(command):
             Finish=True
         except:
             print("search/s <engine: Google/DuckDuckGo/DuckDuckGoLite/QWant/Brave> <query>")
+            Finish=False
     elif cmd.lower()=="wikipedia" or cmd.lower()=="wk":
         try:
             website.wikipedia(argument)
             Finish=True
         except:
-            time.sleep()
             print("wikipedia/wk <query>")
     elif cmd.lower()=="namemc" or cmd.lower()=="n":
         try:
@@ -34,6 +35,7 @@ def input(command):
             Finish=True
         except:
             print("namemc/n <query>")
+            Finish=False
     elif cmd.lower()=="github" or cmd.lower()=="gh":
         try:
             website.github(argument)
@@ -46,10 +48,22 @@ def input(command):
             Finish=True
         except:
             print("translate/t <language from> <language to> <text>")
+            Finish=False
     elif cmd.lower()=="chocopackage" or cmd.lower()=="cp":
         try:
-            website.chocopackagelookup(argument)
+            if platform.system() == 'Windows':
+                website.chocopackagelookup(argument)
+                Finish=True
+            else:
+                print("This command is only supported on Windows!")
+                Finish=False
         except:
-            print("chocopackage/cp <package name>")               
+            print("chocopackage/cp <package name>")
+            Finish=False   
     else:
         print("Invaild Command/Syntax.")
+        Finish=False
+
+    if Finish==True:
+        exit()
+         
