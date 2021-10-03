@@ -1,6 +1,5 @@
 import webbrowser
 import platform
-import time
 
 def search(engine, query):
     if engine.lower()=="google" or engine.lower()=="g":
@@ -36,4 +35,3 @@ def chocopackagelookup(package):
         webbrowser.open('https://community.chocolatey.org/packages?q='+package)
     else:
         print("This command is only supported on Windows!")
-        time.sleep(2)
