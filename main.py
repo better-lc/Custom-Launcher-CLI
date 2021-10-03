@@ -8,6 +8,7 @@ import parse
 #Title
 Version="v0.1 Alpha"
 if platform.system()=="Windows":
+    import ctypes
     ctypes.windll.kernel32.SetConsoleTitleW("Custom Launcher "+ Version)
 else:
     sys.stdout.write("Custom Launcher "+Version)
