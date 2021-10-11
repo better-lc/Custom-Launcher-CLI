@@ -6,7 +6,7 @@ sys.path.insert(1, 'modules')
 import parse
 
 #Title
-Version="v0.1 Alpha"
+Version="v0.2 Alpha"
 if platform.system()=="Windows":
     import ctypes
     ctypes.windll.kernel32.SetConsoleTitleW("Custom Launcher "+ Version)
